@@ -1,0 +1,17 @@
+[package]
+name = "mnemonic"
+version = "0.0.0"
+authors = ["Tiago Lima <tafl.tiagolima@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+diesel = { version = "1.4.5", features = ["postgres","mysql","sqlite"] }
+dotenv = { version = "0.15.0" }
+
+[dev-dependencies]
+diesel_cli = { version = "1.4.0"}
+
+[lib]
+name = "snippet_storage"
+path = "snippet_storage/src/lib.rs"
