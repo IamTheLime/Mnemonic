@@ -10,13 +10,15 @@ fn main() {
 
     let connection = establish_connection_sqlite();
     let results = snippets
-        .filter(title.eq("pila"))
+        .filter(title.eq("Test"))
         .limit(5)
         .load::<Snippet>(&connection)
         .expect("Error loading posts");
 
     println!("Displaying {} posts", results.len());
     for post in results {
-
+        std::println!(
+            "{}", post.title
+        );
     }
 }

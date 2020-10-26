@@ -12,13 +12,8 @@ pub struct Snippet {
     #[diesel(deserialize_as = "StringToVec")]
     pub tags: Vec<String>,
 }
-pub struct StringToVec(Vec<String>);
 
-// impl From<StringToVec> for Vec<String> {
-//     fn from(s: StringToVec) -> Vec<String> {
-//         s.0
-//     }
-// }
+pub struct StringToVec(Vec<String>);
 
 impl Into<Vec<String>> for StringToVec {
     fn into(self) -> Vec<String> {
